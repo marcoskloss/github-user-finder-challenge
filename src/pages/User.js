@@ -1,21 +1,28 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import styles from '../styles/pages/User.module.css'
 import { Card } from '../components/Card'
 import { UserContext } from '../contexts/UserContext'
+import { sortBy } from '../utils/sortBy'
 
 export default function User() {
+  const [ orderedList, setOrderedList ] = useState([])
+  const [ orderBy, setOrderBy ] = useState('desc')
+
   const { userData, username } = useContext(UserContext)
-  const { avatarUrl, bio, email, followers, following }  = userData.userData 
+  const { avatar_url, bio, email, followers, following } = userData.userData
   const { repoList } = userData
-  console.log(userData);
+
+  useEffect(() => {
+    setOrderedList(sortBy(repoList, orderBy))
+  }, [repoList, orderBy])
 
   return (
     <div className={styles.container}>
       <aside>
         <div className={styles.user}>
           <div className={styles.userPhoto}>
-            <img src="https://images.pexels.com/photos/937481/pexels-photo-937481.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=640&w=426" alt="Username"/>
+            <img src={avatar_url} alt={username} />
           </div>
           <h4>{username}</h4>
           <div className={styles.userAbout}>
@@ -31,10 +38,10 @@ export default function User() {
       <section className={styles.reposContainer}>
         <h1>Username repositories</h1>
         <div className={styles.repoList}>
-          {repoList.map((repo, index) => {
+          {orderedList.map((repo, index) => {
             const repoName = repo.fullName.split('/')[1]
             return (
-              <Card 
+              <Card
                 repoName={repoName}
                 stars={repo.stars}
                 key={index}
