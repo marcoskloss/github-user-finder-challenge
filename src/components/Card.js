@@ -1,10 +1,13 @@
 import styles from '../styles/components/Card.module.css'
 
-export function Card() {
+export function Card({ repoName, stars }) {
   return (
     <div className={styles.container}>
-      <div className={styles.name}>Repo Name</div>
-      <div className={styles.stars}>Stars 3</div>
+      <div className={styles.name}>{repoName}</div>
+      <div className={styles.stars}>
+        <span>{stars}</span>
+        <img src="/assets/star.svg" alt="Star"/>
+      </div>
     </div>
   );
 }

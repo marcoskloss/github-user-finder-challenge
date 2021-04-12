@@ -39,7 +39,9 @@ export default function Home() {
               placeholder='Search for a user'
               onChange={handleChange}  
             />
-          <button onClick={handleSubmit}>P</button>
+          <button onClick={handleSubmit}>
+            <img style={{width: '35%'}} src="/assets/search-icon.svg" alt="Search"/>
+          </button>
           </div>
         </section>
       </main>

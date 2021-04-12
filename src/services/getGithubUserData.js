@@ -1,4 +1,3 @@
-
 const USER_DATA_BASE_API_URL = 'https://api.github.com/users/{username}'
 const USER_REPOS_BASE_API_URL = 'https://api.github.com/users/{username}/repos'
 
