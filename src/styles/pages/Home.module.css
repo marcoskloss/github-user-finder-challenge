@@ -1,0 +1,87 @@
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--background);
+}
+
+.container main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container h1 {
+  font-size: 7rem;
+  color: var(--title);
+  margin-right: 25%;
+}
+
+.container h1 span {
+  color: var(--accent);
+}
+
+.searchContainer {
+  height: 2.8rem;
+  width: 22rem;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.searchContainer input {
+  width: 85%;
+  height: 100%;
+  padding-left: .4rem;
+
+  border-radius: 6px 0 0 6px;
+  border: none;
+  
+  font-size: 1.2rem;
+}
+
+.searchContainer button {
+  width: 15%;
+  height: 100%;
+
+  border: none;
+  border-radius: 0 6px 6px 0;
+  
+  background: var(--accent);
+  color: var(--text);
+
+  transition: opacity .3s;
+}
+
+.searchContainer button:hover {
+  opacity: 0.9;
+} 
+
+@media screen and (max-width: 960px) {
+  .container main {
+    flex-direction: column;
+  }
+
+  .container h1 {
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .container section {
+    width: 95%;
+  }
+
+  .searchContainer {
+    width: 100%;
+    margin-right: 0;
+    margin-top: 1.8rem;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .container h1 {
+    font-size: 6.4rem;
+  }
+}

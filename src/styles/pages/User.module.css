@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+}
+
+/*======================= ASIDE*/
+
+.container aside {
+  background: rgb(42, 42, 43);
+  padding: 1.4rem;
+  width: 30%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  color: var(--text);
+  position: fixed;
+}
+
+.userPhoto img {
+  width: 100%;
+}
+
+.user h4 {
+  text-align: center;
+  color: var(--title);
+  margin-top: .8rem;
+}
+
+.bio {
+  margin: .8rem 0;
+}
+
+.follow span:first-child {
+  margin-right: 1rem;
+}
+
+.email {
+  margin-top: .8rem;
+}
+
+.container section {
+  width: 70%;
+  position: absolute;
+  right: 0;
+}
+
+/*====================== SECTION*/
+.reposContainer h1 {
+  color: var(--title);
+  text-align: center;
+  margin-top: 1.4rem;
+}
+
+.repoList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 1.6rem;
+  column-gap: 1rem;
+  padding: 1.4rem;
+}
