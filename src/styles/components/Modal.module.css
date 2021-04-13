@@ -1,0 +1,49 @@
+.overlay {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 500px;
+  background: var(--background);
+  color: var(--text);
+  padding: 2rem 1rem;
+  border-radius: 6px;
+  position: relative;
+  z-index: 3;
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container p {
+  margin: 1.2rem 0;
+}
+
+.container img {
+  width: 20px;
+  margin-left: .4rem;
+}
+
+.link {
+  cursor: pointer;
+  width: fit-content;
+  color: var(--text);
+  display: block;
+  margin-top: 1.2rem;
+  transition: .2s color;
+}
+
+.link:hover {
+  color: var(--accent);
+}

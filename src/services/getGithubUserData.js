@@ -30,7 +30,7 @@ async function getGithubUserRepoList(user) {
     return {
       fullName: repo.full_name,
       description: repo.description,
-      languages: repo.languages,
+      languages: repo.language,
       stars: repo.stargazers_count,
       link: repo.html_url
     }

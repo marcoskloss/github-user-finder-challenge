@@ -1,8 +1,20 @@
 export function sortBy(repoList, order) {
+  console.log('order = ', order);
+
   if (order === 'asc') {
-    return ascSort(repoList)
+    const list = ascSort(repoList)
+
+    const test = list.map(item => item.stars)
+    console.log(test)
+
+    return list
   } else {
-    return descSort(repoList)
+    const list = descSort(repoList)
+
+    const test = list.map(item => item.stars)
+    console.log(test)
+
+    return list
   }
 }
 

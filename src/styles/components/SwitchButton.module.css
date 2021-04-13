@@ -1,0 +1,67 @@
+.container {
+  width: 10rem;
+  height: 3rem;
+  margin-left: 1.4rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.container span, .container button {
+  height: 100%;
+  width: 50%;
+}
+
+.container span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.container button {
+  position: absolute;
+  background: var(--accent);
+  border: none;
+  outline: none;
+  right: 0;
+}
+
+.asc {
+  animation-name: onAsc;
+  animation-duration: .4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+.desc {
+  animation-name: onDesc;
+  animation-duration: .4s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes onAsc {
+  0% {
+    left: 50%;
+    border-radius: 0;
+  }
+  100% {
+    left: 0;
+    border-radius: 4px 0 0 4px;
+  }
+}
+
+@keyframes onDesc {
+  from {
+    right: 50%;
+    border-radius: 0;
+  }
+  to {
+    right: 0;
+    border-radius: 0 4px 4px 0;
+  }
+}

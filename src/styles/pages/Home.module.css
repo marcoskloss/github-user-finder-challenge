@@ -29,6 +29,7 @@
   display: flex;
   align-items: center;
   border-radius: 8px;
+  position: relative;
 }
 
 .searchContainer input {
@@ -61,7 +62,15 @@
 
 .searchContainer button:hover {
   opacity: 0.9;
-} 
+}
+
+
+.errorMsg {
+  color: #ec503e;
+  position: absolute;
+  bottom: -1.6rem;
+  left: 1rem;
+}
 
 @media screen and (max-width: 960px) {
   .container main {
