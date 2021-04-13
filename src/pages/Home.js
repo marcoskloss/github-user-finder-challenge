@@ -7,6 +7,8 @@ import { UserContext } from '../contexts/UserContext'
 export default function Home() {
   const [username, setUsername] = useState('')
   const { getUserData } = useContext(UserContext)
+  const [ hasErrorMsg, setHasErrorMsg ] = useState(false)
+
   const history = useHistory()
 
   function handleChange(e) {
@@ -18,9 +20,10 @@ export default function Home() {
     try {
       await getUserData(username)
       history.push(`/${username}`)
+      setHasErrorMsg(false)
     } catch(e) {
       console.log('ERROR', e)
-      //mostrar mensagem de erro
+      setHasErrorMsg(true)
     }
   }
 
@@ -42,6 +45,7 @@ export default function Home() {
           <button onClick={handleSubmit}>
             <img style={{width: '35%'}} src="/assets/search-icon.svg" alt="Search"/>
           </button>
+            { hasErrorMsg && <small className={styles.errorMsg}>User not found</small> }
           </div>
         </section>
       </main>
